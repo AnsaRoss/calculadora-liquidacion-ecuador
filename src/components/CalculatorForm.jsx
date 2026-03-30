@@ -1,4 +1,13 @@
+import { useEffect } from "react";
+
 function CalculatorForm({ formData, errors, onChange, onSubmit }) {
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {
+      console.log("AdSense error", e);
+    }
+  }, []);
   return (
     <form className="calculator-form" onSubmit={onSubmit} noValidate>
       <label className="field">
@@ -42,6 +51,15 @@ function CalculatorForm({ formData, errors, onChange, onSubmit }) {
       <button className="primary-button" type="submit">
         Calcular
       </button>
+      {/* ANUNCIO */}
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block", marginTop: "20px" }}
+        data-ad-client="ca-pub-6376754412949061"
+        data-ad-slot="1234567890"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
     </form>
   );
 }
