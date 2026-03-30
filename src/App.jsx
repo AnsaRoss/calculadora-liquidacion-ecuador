@@ -47,13 +47,30 @@ function App() {
   return (
     <main className="app-shell">
       <section className="calculator-card">
-        <div className="hero-copy">
-          <p className="eyebrow">Herramienta laboral</p>
-          <h1>Calculadora de Liquidacion Ecuador 🇪🇨</h1>
-          <p className="subtitle">
-            Calcula una estimacion rapida de decimo tercero y vacaciones con base
-            en el tiempo trabajado.
-          </p>
+        <div className="hero-panel">
+          <div className="hero-copy">
+            <p className="eyebrow">Herramienta laboral</p>
+            <h1>Calculadora de Liquidacion Ecuador</h1>
+            <p className="subtitle">
+              Calcula una estimacion rapida de decimo tercero y vacaciones con base
+              en el tiempo trabajado.
+            </p>
+          </div>
+
+          <div className="hero-highlights">
+            <article>
+              <strong>Calculo simple</strong>
+              <span>Formula proporcional basada en meses trabajados.</span>
+            </article>
+            <article>
+              <strong>Resultado claro</strong>
+              <span>Montos visibles, ordenados y con dos decimales.</span>
+            </article>
+            <article>
+              <strong>Diseno responsive</strong>
+              <span>Se adapta bien a escritorio y telefono.</span>
+            </article>
+          </div>
         </div>
 
         <CalculatorForm
