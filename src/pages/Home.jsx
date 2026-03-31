@@ -85,11 +85,11 @@ function Home() {
 
             <nav className="hero-nav" aria-label="Guias relacionadas">
               <Link to="/calculadora-decimo-tercero-ecuador">Calculadora de decimo tercero</Link>
+              <Link to="/calculadora-vacaciones-ecuador">Calculadora de vacaciones</Link>
+              <Link to="/calculadora-finiquito-ecuador">Calculadora de finiquito</Link>
               <Link to="/como-calcular-liquidacion-ecuador">Como calcular paso a paso</Link>
               <Link to="/decimo-tercero-ecuador">Decimo tercero en Ecuador</Link>
               <Link to="/vacaciones-ecuador">Vacaciones en Ecuador</Link>
-              <Link to="/finiquito-ecuador">Finiquito en Ecuador</Link>
-              <Link to="/despido-intempestivo-ecuador">Despido intempestivo</Link>
             </nav>
 
             <div className="hero-highlights">
@@ -136,11 +136,11 @@ function Home() {
             </p>
             <div className="seo-links-grid">
               <Link to="/calculadora-decimo-tercero-ecuador">Usar calculadora de decimo tercero</Link>
+              <Link to="/calculadora-vacaciones-ecuador">Usar calculadora de vacaciones</Link>
+              <Link to="/calculadora-finiquito-ecuador">Usar calculadora de finiquito</Link>
               <Link to="/como-calcular-liquidacion-ecuador">Leer guia completa</Link>
               <Link to="/decimo-tercero-ecuador">Aprender sobre decimo tercero</Link>
               <Link to="/vacaciones-ecuador">Aprender sobre vacaciones</Link>
-              <Link to="/finiquito-ecuador">Entender el finiquito</Link>
-              <Link to="/renuncia-voluntaria-ecuador">Renuncia voluntaria</Link>
             </div>
           </div>
         </section>

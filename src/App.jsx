@@ -1,5 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import CalculadoraDecimoTercero from './pages/CalculadoraDecimoTercero';
+import CalculadoraVacaciones from './pages/CalculadoraVacaciones';
+import CalculadoraFiniquito from './pages/CalculadoraFiniquito';
 import ComoCalcular from './pages/ComoCalcular';
 import DecimoTercero from './pages/DecimoTercero';
 import Vacaciones from './pages/Vacaciones';
@@ -11,7 +14,6 @@ import JubilacionPatronal from './pages/JubilacionPatronal';
 import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
 import TerminosCondiciones from './pages/TerminosCondiciones';
 import Contacto from './pages/Contacto';
-import CalculadoraDecimoTercero from './pages/CalculadoraDecimoTercero';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/calculadora-decimo-tercero-ecuador" element={<CalculadoraDecimoTercero />} />
+        <Route path="/calculadora-vacaciones-ecuador" element={<CalculadoraVacaciones />} />
+        <Route path="/calculadora-finiquito-ecuador" element={<CalculadoraFiniquito />} />
         <Route path="/como-calcular-liquidacion-ecuador" element={<ComoCalcular />} />
         <Route path="/decimo-tercero-ecuador" element={<DecimoTercero />} />
         <Route path="/vacaciones-ecuador" element={<Vacaciones />} />

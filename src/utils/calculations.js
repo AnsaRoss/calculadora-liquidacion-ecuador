@@ -48,6 +48,10 @@ function validateBaseFields({ salary, startDate, endDate }) {
   return { start, end, salary: Number(salary) };
 }
 
+function calculateMonths(start, end) {
+  return (end.getTime() - start.getTime()) / MS_PER_DAY / 30;
+}
+
 export function calculateSettlement({ salary, startDate, endDate }) {
   const validation = validateBaseFields({ salary, startDate, endDate });
 
@@ -55,8 +59,7 @@ export function calculateSettlement({ salary, startDate, endDate }) {
     return { errors: validation.errors };
   }
 
-  const diffInDays = (validation.end.getTime() - validation.start.getTime()) / MS_PER_DAY;
-  const months = diffInDays / 30;
+  const months = calculateMonths(validation.start, validation.end);
   const decimo = (validation.salary / 12) * months;
   const vacations = (validation.salary / 24) * months;
   const total = decimo + vacations;
@@ -76,12 +79,31 @@ export function calculateDecimoTercero({ salary, startDate, endDate }) {
     return { errors: validation.errors };
   }
 
-  const diffInDays = (validation.end.getTime() - validation.start.getTime()) / MS_PER_DAY;
-  const months = diffInDays / 30;
+  const months = calculateMonths(validation.start, validation.end);
   const decimo = (validation.salary / 12) * months;
 
   return {
     months,
     decimo,
   };
+}
+
+export function calculateVacations({ salary, startDate, endDate }) {
+  const validation = validateBaseFields({ salary, startDate, endDate });
+
+  if (validation.errors) {
+    return { errors: validation.errors };
+  }
+
+  const months = calculateMonths(validation.start, validation.end);
+  const vacations = (validation.salary / 24) * months;
+
+  return {
+    months,
+    vacations,
+  };
+}
+
+export function calculateFiniquito({ salary, startDate, endDate }) {
+  return calculateSettlement({ salary, startDate, endDate });
 }

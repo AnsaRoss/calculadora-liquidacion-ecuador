@@ -13,13 +13,12 @@ function SiteFooter() {
         </section>
 
         <nav aria-label="Enlaces principales">
-          <h3>Guias</h3>
+          <h3>Calculadoras</h3>
           <Link to="/calculadora-decimo-tercero-ecuador">Calculadora de decimo tercero</Link>
+          <Link to="/calculadora-vacaciones-ecuador">Calculadora de vacaciones</Link>
+          <Link to="/calculadora-finiquito-ecuador">Calculadora de finiquito</Link>
           <Link to="/como-calcular-liquidacion-ecuador">Como calcular liquidacion</Link>
-          <Link to="/decimo-tercero-ecuador">Decimo tercero</Link>
-          <Link to="/vacaciones-ecuador">Vacaciones</Link>
           <Link to="/finiquito-ecuador">Finiquito</Link>
-          <Link to="/renuncia-voluntaria-ecuador">Renuncia voluntaria</Link>
         </nav>
 
         <nav aria-label="Enlaces legales">
