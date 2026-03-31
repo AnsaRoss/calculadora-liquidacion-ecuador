@@ -1,75 +1,46 @@
 import { Link } from 'react-router-dom';
+import SeoHead from '../components/SeoHead';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Decimo tercero en Ecuador: como se calcula y cuando se paga',
+  description:
+    'Explicacion simple del decimo tercero en Ecuador y su calculo proporcional dentro de una liquidacion laboral.',
+  inLanguage: 'es-EC',
+};
 
 function DecimoTercero() {
   return (
-    <main className="app-shell">
-      <article className="seo-page">
-        <p className="eyebrow">Beneficios laborales</p>
-        <h1>Decimo tercero en Ecuador: como se calcula y cuando se paga</h1>
+    <>
+      <SeoHead
+        title="Decimo tercero en Ecuador: como se calcula y cuando se paga"
+        description="Conoce como calcular el decimo tercero en Ecuador y como estimarlo dentro de una liquidacion laboral proporcional."
+        path="/decimo-tercero-ecuador"
+        type="article"
+        structuredData={structuredData}
+      />
 
-        <div className="seo-content">
-          <p>
-            El decimo tercero en Ecuador es uno de los beneficios laborales mas
-            conocidos y tambien uno de los mas consultados por trabajadores y
-            empleadores. Este valor corresponde a una remuneracion adicional que
-            se genera de forma proporcional durante el periodo trabajado. Entender
-            como se calcula ayuda a comprobar si un pago es correcto y tambien a
-            planificar mejor una liquidacion laboral cuando termina una relacion de
-            trabajo.
-          </p>
+      <main className="app-shell">
+        <article className="seo-page">
+          <p className="eyebrow">Beneficios laborales</p>
+          <h1>Decimo tercero en Ecuador: como se calcula y cuando se paga</h1>
 
-          <p>
-            En terminos practicos, el decimo tercero se relaciona con la doceava
-            parte de las remuneraciones que una persona recibe. Cuando se quiere
-            hacer una estimacion sencilla usando un sueldo mensual fijo, la formula
-            mas directa es dividir el sueldo para doce y multiplicar ese resultado
-            por el numero de meses trabajados. Si una persona ha trabajado menos de
-            un ano, el pago se calcula de forma proporcional al tiempo transcurrido.
-          </p>
+          <div className="seo-content">
+            <p>El decimo tercero en Ecuador es uno de los beneficios laborales mas conocidos. Muchas personas lo buscan cuando revisan su rol de pagos o cuando quieren saber cuanto dinero deberian recibir en una liquidacion. Entender su funcionamiento es clave para comprobar si el valor entregado por el empleador tiene sentido.</p>
+            <p>De forma practica, el decimo tercero representa una parte proporcional de las remuneraciones recibidas por el trabajador. Cuando se quiere estimar rapidamente con un sueldo mensual fijo, una formula simple consiste en dividir el sueldo para doce y multiplicar ese resultado por los meses trabajados. Eso da un valor de referencia facil de interpretar.</p>
+            <p>Este beneficio suele aparecer en la liquidacion cuando la persona deja de trabajar antes de haber recibido el pago anual completo. En ese caso, el empleador debe reconocer la parte acumulada hasta la fecha de salida. Por eso muchas consultas en Google giran alrededor de cuanto corresponde por decimo tercero al renunciar o ser despedido.</p>
+            <p>Es importante recordar que pueden existir variaciones cuando el sueldo no es fijo o cuando hay ingresos adicionales que forman parte de la remuneracion. Sin embargo, para una calculadora simple y orientada al usuario, un modelo proporcional con sueldo mensual fijo resulta suficiente para ofrecer una respuesta util y rapida.</p>
+            <p>Tambien conviene mirar este rubro junto con vacaciones no gozadas y otros valores pendientes. Analizarlo dentro del contexto de la liquidacion mejora la comprension general y ayuda a que el trabajador tenga una expectativa mas realista antes de conversar con recursos humanos o con un asesor laboral.</p>
+            <p>Una pagina dedicada al decimo tercero tiene mucho potencial SEO porque responde una intencion de busqueda directa. Si el contenido es claro y luego conduce al usuario hacia una calculadora gratuita, el sitio puede atraer trafico, mejorar el tiempo de permanencia y abrir espacio para monetizacion con anuncios sin sacrificar utilidad.</p>
+          </div>
 
-          <p>
-            Este rubro aparece con frecuencia dentro de las liquidaciones porque,
-            al finalizar el contrato, el empleador debe pagar la parte acumulada y
-            aun no entregada. Por eso resulta tan util contar con una pagina
-            especializada sobre el decimo tercero en Ecuador: muchas personas
-            buscan saber cuanto les corresponde exactamente al salir de una empresa
-            o al revisar su rol de pagos.
-          </p>
-
-          <p>
-            Tambien es importante recordar que el calculo final puede cambiar si el
-            trabajador ha tenido ingresos variables, comisiones u otros conceptos
-            incluidos en la remuneracion. Sin embargo, para una calculadora inicial
-            y una experiencia de usuario clara, un modelo proporcional con sueldo
-            mensual fijo es suficiente para generar una referencia rapida. Esto
-            permite tomar decisiones con mejor informacion y llegar mas preparado a
-            una conversacion con recursos humanos o con un asesor laboral.
-          </p>
-
-          <p>
-            Desde el punto de vista SEO, una pagina dedicada al decimo tercero
-            capta trafico de usuarios que no necesariamente buscan primero una
-            calculadora, sino una explicacion concreta. Una vez que entienden el
-            concepto, es natural invitarlos a usar la herramienta principal para
-            obtener un numero estimado. Esa combinacion entre contenido educativo y
-            funcionalidad practica fortalece el valor del sitio y mejora la
-            navegacion entre rutas.
-          </p>
-
-          <p>
-            Si quieres pasar de la teoria a un valor estimado, la mejor opcion es
-            usar la calculadora principal del sitio. Alli puedes ingresar sueldo,
-            fecha de ingreso y fecha de salida para obtener un monto proporcional
-            de decimo tercero junto con otros rubros relacionados con la
-            liquidacion laboral en Ecuador.
-          </p>
-        </div>
-
-        <Link className="primary-button seo-link" to="/">
-          Usar calculadora
-        </Link>
-      </article>
-    </main>
+          <Link className="primary-button seo-link" to="/">
+            Usar calculadora
+          </Link>
+        </article>
+      </main>
+    </>
   );
 }
 

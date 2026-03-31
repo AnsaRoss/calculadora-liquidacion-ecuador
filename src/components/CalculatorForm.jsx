@@ -1,13 +1,6 @@
-import { useEffect } from "react";
+import AdSlot from './AdSlot';
 
 function CalculatorForm({ formData, errors, onChange, onSubmit }) {
-useEffect(() => {
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) {
-      console.log("AdSense error", e);
-    }
-  }, []); 
   return (
     <div className="form-column">
       <form className="calculator-form" onSubmit={onSubmit} noValidate>
@@ -26,8 +19,9 @@ useEffect(() => {
             placeholder="Ej: 550"
             value={formData.salary}
             onChange={onChange}
+            aria-describedby={errors.salary ? 'salary-error' : undefined}
           />
-          {errors.salary ? <small className="field-error">{errors.salary}</small> : null}
+          {errors.salary ? <small id="salary-error" className="field-error">{errors.salary}</small> : null}
         </label>
 
         <label className="field">
@@ -37,8 +31,9 @@ useEffect(() => {
             name="startDate"
             value={formData.startDate}
             onChange={onChange}
+            aria-describedby={errors.startDate ? 'startDate-error' : undefined}
           />
-          {errors.startDate ? <small className="field-error">{errors.startDate}</small> : null}
+          {errors.startDate ? <small id="startDate-error" className="field-error">{errors.startDate}</small> : null}
         </label>
 
         <label className="field">
@@ -48,8 +43,9 @@ useEffect(() => {
             name="endDate"
             value={formData.endDate}
             onChange={onChange}
+            aria-describedby={errors.endDate ? 'endDate-error' : undefined}
           />
-          {errors.endDate ? <small className="field-error">{errors.endDate}</small> : null}
+          {errors.endDate ? <small id="endDate-error" className="field-error">{errors.endDate}</small> : null}
         </label>
 
         {errors.form ? <p className="form-error">{errors.form}</p> : null}
@@ -61,35 +57,23 @@ useEffect(() => {
 
       <section className="promo-card">
         <div className="promo-ad">
-          <p className="promo-label">Espacio publicitario</p>
-          <ins
-            className="adsbygoogle"
-            style={{ display: 'block' }}
-            data-ad-client="ca-pub-6376754412949061"
-            data-ad-slot="2820629327"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          />
+          <p className="promo-label">Publicidad</p>
+          <AdSlot slot="2820629327" />
         </div>
 
         <div className="promo-copy">
-          <h3>Como calcular la liquidacion en Ecuador</h3>
+          <h3>Antes de aceptar tu finiquito</h3>
           <p>
-            La liquidacion laboral en Ecuador incluye valores proporcionales como
-            el decimo tercero, vacaciones no gozadas y el tiempo trabajado.
+            Revisa los valores proporcionales de decimo tercero y vacaciones para
+            tener una referencia clara antes de firmar cualquier documento.
           </p>
 
-          <h3>Que incluye la liquidacion</h3>
+          <h3>Consejos rapidos</h3>
           <ul className="promo-list">
-            <li>Decimo tercero proporcional</li>
-            <li>Vacaciones no utilizadas</li>
-            <li>Tiempo trabajado</li>
+            <li>Verifica bien la fecha real de salida.</li>
+            <li>Confirma si tu sueldo incluye componentes variables.</li>
+            <li>Guarda una captura del resultado para compararlo despues.</li>
           </ul>
-
-          <p>
-            Usa esta calculadora para obtener una estimacion rapida y clara antes
-            de revisar los valores finales.
-          </p>
         </div>
       </section>
     </div>

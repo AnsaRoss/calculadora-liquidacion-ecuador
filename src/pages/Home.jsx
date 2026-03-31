@@ -1,14 +1,29 @@
 import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import CalculatorForm from '../components/CalculatorForm';
 import ResultsCard from '../components/ResultsCard';
+import SeoHead from '../components/SeoHead';
 import { calculateSettlement } from '../utils/calculations';
-import { Link } from "react-router-dom";
 
 const initialForm = {
   salary: '',
   startDate: '',
   endDate: '',
+};
+
+const homeStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Calculadora de Liquidacion Ecuador',
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'Any',
+  description:
+    'Calculadora online para estimar liquidacion laboral en Ecuador, incluyendo decimo tercero y vacaciones.',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
 };
 
 function Home() {
@@ -48,100 +63,81 @@ function Home() {
 
   return (
     <>
-    <Helmet>
-      <title>Calculadora de Liquidación Ecuador 2026 Gratis</title>
-      <meta 
-        name="description" 
-        content="Calcula tu liquidación laboral en Ecuador gratis. Incluye décimo tercero, vacaciones y total automático en segundos." 
+      <SeoHead
+        title="Calculadora de Liquidacion Ecuador Gratis"
+        description="Calcula tu liquidacion laboral en Ecuador con una herramienta gratis. Estima decimo tercero, vacaciones y total en segundos."
+        path="/"
+        structuredData={homeStructuredData}
       />
-      <link 
-        rel="canonical" 
-        href="https://calculadora-liquidacion-ecuador.vercel.app/" 
-      />
-    </Helmet>
-    <main className="app-shell">
-      <section className="calculator-card">
-        <div className="hero-panel">
-          <div className="hero-copy">
-            <p className="eyebrow">Herramienta laboral</p>
-            <h1>Calculadora de Liquidación Laboral en Ecuador</h1>
-            <p className="subtitle">
-              Calcula una estimacion rapida de decimo tercero y vacaciones con base
-              en el tiempo trabajado.
-            </p>
+
+      <main className="app-shell page-home">
+        <section className="calculator-card">
+          <div className="hero-panel">
+            <div className="hero-copy">
+              <p className="eyebrow">Herramienta laboral</p>
+              <h1>Calculadora de Liquidacion Laboral en Ecuador</h1>
+              <p className="subtitle">
+                Calcula una estimacion rapida de decimo tercero, vacaciones y total
+                acumulado segun el tiempo trabajado.
+              </p>
+            </div>
+
+            <nav className="hero-nav" aria-label="Guias relacionadas">
+              <Link to="/como-calcular-liquidacion-ecuador">Como calcular paso a paso</Link>
+              <Link to="/decimo-tercero-ecuador">Decimo tercero en Ecuador</Link>
+              <Link to="/vacaciones-ecuador">Vacaciones en Ecuador</Link>
+            </nav>
+
+            <div className="hero-highlights">
+              <article>
+                <strong>Calculo simple</strong>
+                <span>Formula proporcional basada en meses trabajados.</span>
+              </article>
+              <article>
+                <strong>Resultado claro</strong>
+                <span>Montos visibles, ordenados y con dos decimales.</span>
+              </article>
+              <article>
+                <strong>Accesible y rapido</strong>
+                <span>Se adapta bien a telefono y escritorio.</span>
+              </article>
+            </div>
           </div>
 
-          <div className="hero-highlights">
-            <article>
-              <strong>Calculo simple</strong>
-              <span>Formula proporcional basada en meses trabajados.</span>
-            </article>
-            <article>
-              <strong>Resultado claro</strong>
-              <span>Montos visibles, ordenados y con dos decimales.</span>
-            </article>
-            <article>
-              <strong>Diseno responsive</strong>
-              <span>Se adapta bien a escritorio y telefono.</span>
-            </article>
+          <CalculatorForm
+            formData={formData}
+            errors={errors}
+            onChange={handleChange}
+            onSubmit={handleSubmit}
+          />
+
+          <ResultsCard result={result} />
+        </section>
+
+        <section className="seo-section">
+          <div className="seo-content seo-content--home">
+            <h2>Como calcular la liquidacion laboral en Ecuador</h2>
+            <p>
+              Esta calculadora te ayuda a estimar rapidamente valores comunes de la
+              liquidacion laboral en Ecuador. Solo necesitas ingresar tu sueldo
+              mensual, la fecha de ingreso y la fecha de salida para obtener una
+              referencia automatica.
+            </p>
+            <p>
+              El calculo actual toma los meses trabajados como la diferencia en dias
+              dividida para treinta. A partir de ese dato estima el decimo tercero,
+              las vacaciones proporcionales y el total resultante. Es una herramienta
+              util para trabajadores que desean revisar un finiquito antes de tomar
+              decisiones.
+            </p>
+            <div className="seo-links-grid">
+              <Link to="/como-calcular-liquidacion-ecuador">Leer guia completa</Link>
+              <Link to="/decimo-tercero-ecuador">Aprender sobre decimo tercero</Link>
+              <Link to="/vacaciones-ecuador">Aprender sobre vacaciones</Link>
+            </div>
           </div>
-        </div>
-
-        <CalculatorForm
-          formData={formData}
-          errors={errors}
-          onChange={handleChange}
-          onSubmit={handleSubmit}
-        />
-
-        <ResultsCard result={result} />
-      </section>
-      <section className="seo-content">
-            <h2>¿Cómo calcular la liquidación laboral en Ecuador?</h2>
-
-            <p>
-              La liquidación laboral en Ecuador incluye varios componentes como el décimo tercero,
-              vacaciones no gozadas y otros valores acumulados dependiendo del tiempo trabajado.
-            </p>
-
-            <p>
-              Para calcularla correctamente es necesario conocer el salario, la fecha de ingreso y la fecha de salida.
-              Con estos datos se puede estimar el valor proporcional de cada beneficio.
-            </p>
-
-            <h3>¿Qué incluye la liquidación?</h3>
-            <ul>
-              <li>Décimo tercero proporcional</li>
-              <li>Vacaciones no gozadas</li>
-              <li>Otros valores según el caso</li>
-            </ul>
-
-            <h3>Ejemplo práctico</h3>
-            <p>
-              Si un trabajador gana $600 y trabajó un año, su liquidación incluirá el décimo tercero acumulado
-              y vacaciones proporcionales según el tiempo trabajado.
-            </p>
-
-            <h3>Guías relacionadas</h3>
-            <ul>
-              <li>
-                <Link to="/como-calcular-liquidacion-ecuador">
-                  Cómo calcular la liquidación paso a paso
-                </Link>
-              </li>
-              <li>
-                <a href="/decimo-tercero-ecuador">
-                  Cómo calcular el décimo tercero
-                </a>
-              </li>
-              <li>
-                <a href="/vacaciones-ecuador">
-                  Cómo calcular las vacaciones
-                </a>
-              </li>
-            </ul>
-          </section>
-    </main>
+        </section>
+      </main>
     </>
   );
 }

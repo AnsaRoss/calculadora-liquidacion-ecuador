@@ -1,79 +1,46 @@
 import { Link } from 'react-router-dom';
+import SeoHead from '../components/SeoHead';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Como calcular la liquidacion laboral en Ecuador paso a paso',
+  description:
+    'Guia practica para entender como calcular liquidacion laboral, decimo tercero y vacaciones en Ecuador.',
+  inLanguage: 'es-EC',
+};
 
 function ComoCalcular() {
   return (
-    <main className="app-shell">
-      <article className="seo-page">
-        <p className="eyebrow">Guia laboral</p>
-        <h1>Como calcular la liquidacion laboral en Ecuador paso a paso</h1>
+    <>
+      <SeoHead
+        title="Como calcular la liquidacion laboral en Ecuador paso a paso"
+        description="Aprende como calcular la liquidacion laboral en Ecuador con una guia clara sobre meses trabajados, decimo tercero y vacaciones."
+        path="/como-calcular-liquidacion-ecuador"
+        type="article"
+        structuredData={structuredData}
+      />
 
-        <div className="seo-content">
-          <p>
-            Calcular la liquidacion laboral en Ecuador es una tarea importante para
-            cualquier trabajador que termina una relacion de trabajo, ya sea por
-            renuncia, despido o finalizacion de contrato. Este calculo permite
-            conocer un valor aproximado de lo que el empleador debe pagar por
-            beneficios acumulados durante el tiempo trabajado. Aunque existen
-            muchos casos particulares en la normativa ecuatoriana, una forma
-            practica de empezar es estimar los rubros proporcionales mas comunes:
-            el decimo tercero y las vacaciones no gozadas.
-          </p>
+      <main className="app-shell">
+        <article className="seo-page">
+          <p className="eyebrow">Guia laboral</p>
+          <h1>Como calcular la liquidacion laboral en Ecuador paso a paso</h1>
 
-          <p>
-            El primer paso consiste en identificar tres datos basicos: sueldo
-            mensual, fecha de ingreso y fecha de salida. Con esa informacion se
-            puede determinar el tiempo efectivo trabajado. En esta calculadora se
-            usa una aproximacion simple en la que los meses trabajados se obtienen
-            a partir de la diferencia en dias dividida para treinta. Este metodo
-            es util para obtener una referencia rapida y entender como crece la
-            liquidacion a medida que pasa el tiempo.
-          </p>
+          <div className="seo-content">
+            <p>Calcular la liquidacion laboral en Ecuador es importante para cualquier trabajador que termina una relacion de trabajo por renuncia, despido o finalizacion de contrato. Tener una referencia clara ayuda a entender si el valor propuesto por el empleador parece razonable y tambien permite hacer preguntas con mas seguridad al momento de revisar un finiquito.</p>
+            <p>El calculo base suele comenzar con tres datos: sueldo mensual, fecha de ingreso y fecha de salida. Con estos elementos se obtiene el tiempo trabajado, que en esta herramienta se estima tomando la diferencia en dias y dividiendola para treinta. Esa aproximacion es util para generar una respuesta simple, rapida y facil de comprender por cualquier usuario.</p>
+            <p>Luego se calcula el decimo tercero proporcional. En una version simplificada, se divide el sueldo para doce y se multiplica por los meses trabajados. Este rubro es uno de los mas consultados porque representa un valor acumulado que el trabajador espera recibir cuando termina la relacion laboral y aun no ha sido pagado completamente.</p>
+            <p>Despues se estima el valor de vacaciones no gozadas. Para una referencia practica, la formula utilizada es sueldo dividido para veinticuatro y multiplicado por los meses trabajados. No reemplaza un estudio legal detallado, pero si ofrece un punto de partida bastante util para revisar si el total recibido esta dentro de un rango esperable.</p>
+            <p>La suma de esos rubros da un total estimado de liquidacion. Dependiendo del caso, pueden existir otros componentes como horas extra, bonificaciones, fondos pendientes o indemnizaciones, pero esta calculadora se enfoca en dos beneficios comunes y faciles de entender. Eso mejora la experiencia del usuario porque evita complejidad innecesaria y entrega un resultado inmediato.</p>
+            <p>Desde el punto de vista SEO, una guia como esta responde una duda frecuente que muchos usuarios escriben en Google. Si la informacion es clara, bien estructurada y se conecta con una herramienta util, es mucho mas probable que la pagina gane visitas organicas y que los usuarios terminen usando la calculadora principal del sitio.</p>
+          </div>
 
-          <p>
-            Una vez calculados los meses trabajados, se estima el decimo tercero.
-            En Ecuador este beneficio corresponde a la doceava parte de las
-            remuneraciones percibidas en el periodo de calculo. Para una version
-            proporcional simplificada, se toma el sueldo mensual, se divide para
-            doce y luego se multiplica por el numero de meses trabajados. El
-            resultado entrega un valor aproximado del beneficio acumulado hasta la
-            fecha de salida.
-          </p>
-
-          <p>
-            El siguiente rubro son las vacaciones. Para obtener una referencia
-            proporcional, se utiliza una formula sencilla: sueldo dividido para
-            veinticuatro y multiplicado por los meses trabajados. Esta aproximacion
-            permite estimar el valor de vacaciones no gozadas de forma rapida, sin
-            necesidad de hacer una liquidacion legal completa. Es especialmente
-            util cuando una persona quiere revisar si el monto ofrecido por su
-            empleador parece razonable.
-          </p>
-
-          <p>
-            Finalmente, el total estimado de liquidacion se obtiene sumando el
-            valor del decimo tercero y el valor de vacaciones. Esta suma no siempre
-            representa todos los conceptos que pueden existir en una terminacion de
-            relacion laboral, pero si funciona como una base clara y facil de
-            entender. Si existen horas extra, fondos pendientes, bonificaciones o
-            indemnizaciones, esos valores deben revisarse por separado.
-          </p>
-
-          <p>
-            Tener una pagina explicativa sobre como calcular la liquidacion en
-            Ecuador ayuda tanto al usuario como al posicionamiento SEO del sitio,
-            porque responde preguntas frecuentes con contenido util y relevante.
-            Ademas, dirigir al lector hacia una calculadora practica mejora la
-            experiencia, ya que combina informacion con una herramienta real. Si
-            deseas obtener una estimacion inmediata, puedes volver a la pagina
-            principal y usar la calculadora con tus fechas y sueldo mensual.
-          </p>
-        </div>
-
-        <Link className="primary-button seo-link" to="/">
-          Usar calculadora
-        </Link>
-      </article>
-    </main>
+          <Link className="primary-button seo-link" to="/">
+            Usar calculadora
+          </Link>
+        </article>
+      </main>
+    </>
   );
 }
 
