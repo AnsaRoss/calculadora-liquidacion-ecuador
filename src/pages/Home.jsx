@@ -27,6 +27,33 @@ const homeStructuredData = {
   },
 };
 
+const calculators = [
+  {
+    title: 'Liquidacion laboral',
+    description: 'Calcula decimo tercero, vacaciones y total en una sola vista.',
+    to: '#calculadora-principal',
+    label: 'Usar ahora',
+  },
+  {
+    title: 'Decimo tercero',
+    description: 'Ruta enfocada en una sola duda con mejor potencial SEO.',
+    to: '/calculadora-decimo-tercero-ecuador',
+    label: 'Abrir calculadora',
+  },
+  {
+    title: 'Vacaciones',
+    description: 'Ideal para validar vacaciones proporcionales rapidamente.',
+    to: '/calculadora-vacaciones-ecuador',
+    label: 'Abrir calculadora',
+  },
+  {
+    title: 'Finiquito',
+    description: 'Estimacion rapida para revisar un pago final de salida.',
+    to: '/calculadora-finiquito-ecuador',
+    label: 'Abrir calculadora',
+  },
+];
+
 function Home() {
   const [formData, setFormData] = useState(initialForm);
   const [errors, setErrors] = useState({});
@@ -65,18 +92,107 @@ function Home() {
   return (
     <>
       <SeoHead
-        title="Calculadora de Liquidacion Ecuador Gratis"
-        description="Calcula tu liquidacion laboral en Ecuador con una herramienta gratis. Estima decimo tercero, vacaciones y total en segundos."
+        title="Calculadora de Liquidacion Ecuador Gratis y Rapida"
+        description="Calcula tu liquidacion laboral en Ecuador gratis. Estima decimo tercero, vacaciones y finiquito con resultados rapidos y faciles de entender."
         path="/"
         structuredData={homeStructuredData}
       />
 
       <main className="app-shell page-home">
-        <section className="calculator-card">
-          <div className="hero-panel">
+        <section className="landing-hero">
+          <div className="landing-hero__content">
+            <p className="eyebrow eyebrow--dark">Herramientas laborales para Ecuador</p>
+            <h1>Calcula tu liquidacion en minutos y revisa si el pago final tiene sentido</h1>
+            <p className="landing-hero__lead">
+              Usa calculadoras gratuitas de liquidacion, decimo tercero, vacaciones
+              y finiquito. Pensadas para personas que necesitan una referencia rapida,
+              clara y facil de entender.
+            </p>
+
+            <div className="landing-hero__actions">
+              <a className="primary-button hero-action" href="#calculadora-principal">
+                Calcular liquidacion
+              </a>
+              <Link className="secondary-link" to="/calculadora-finiquito-ecuador">
+                Probar calculadora de finiquito
+              </Link>
+            </div>
+
+            <div className="landing-trust">
+              <article>
+                <strong>Gratis</strong>
+                <span>Sin registro ni pasos innecesarios.</span>
+              </article>
+              <article>
+                <strong>Rapido</strong>
+                <span>Resultados en segundos desde celular o escritorio.</span>
+              </article>
+              <article>
+                <strong>Util</strong>
+                <span>Ideal para revisar cifras antes de firmar documentos.</span>
+              </article>
+            </div>
+          </div>
+
+          <aside className="landing-hero__panel">
+            <p className="landing-hero__panel-label">Empieza por aqui</p>
+            <div className="landing-hero__panel-list">
+              {calculators.map((item) => (
+                <article key={item.title} className="mini-card">
+                  <strong>{item.title}</strong>
+                  <p>{item.description}</p>
+                  {item.to.startsWith('#') ? (
+                    <a href={item.to}>{item.label}</a>
+                  ) : (
+                    <Link to={item.to}>{item.label}</Link>
+                  )}
+                </article>
+              ))}
+            </div>
+          </aside>
+        </section>
+
+        <section className="tool-grid">
+          <div className="section-heading">
+            <p className="eyebrow eyebrow--dark">Elige tu herramienta</p>
+            <h2>Calculadoras creadas para atraer trafico y ayudarte a comparar valores</h2>
+          </div>
+
+          <div className="tool-grid__cards">
+            {calculators.map((item) => (
+              <article key={item.title} className="tool-card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                {item.to.startsWith('#') ? (
+                  <a className="tool-card__link" href={item.to}>{item.label}</a>
+                ) : (
+                  <Link className="tool-card__link" to={item.to}>{item.label}</Link>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="benefits-strip">
+          <article>
+            <strong>Mas paginas, mas trafico</strong>
+            <span>El sitio ahora puede captar multiples busquedas laborales de Ecuador.</span>
+          </article>
+          <article>
+            <strong>Mejor conversion</strong>
+            <span>La portada dirige al usuario rapido hacia una herramienta concreta.</span>
+          </article>
+          <article>
+            <strong>Mejor monetizacion</strong>
+            <span>Mas paginas vistas y mas tiempo en sitio ayudan a AdSense.</span>
+          </article>
+        </section>
+
+        <section className="calculator-card" id="calculadora-principal">
+          <div className="hero-panel hero-panel--main">
             <div className="hero-copy">
-              <p className="eyebrow">Herramienta laboral</p>
-              <h1>Calculadora de Liquidacion Laboral en Ecuador</h1>
+              <p className="eyebrow">Calculadora principal</p>
+              <h2>Calculadora de Liquidacion Laboral en Ecuador</h2>
               <p className="subtitle">
                 Calcula una estimacion rapida de decimo tercero, vacaciones y total
                 acumulado segun el tiempo trabajado.

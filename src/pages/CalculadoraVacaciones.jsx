@@ -65,8 +65,8 @@ function CalculadoraVacaciones() {
   return (
     <>
       <SeoHead
-        title="Calculadora de Vacaciones Ecuador Gratis"
-        description="Calcula vacaciones proporcionales en Ecuador con una herramienta gratis y facil de usar."
+        title="Calculadora de Vacaciones Ecuador Gratis y Rapida"
+        description="Calcula vacaciones proporcionales en Ecuador gratis. Ingresa sueldo y fechas para obtener un valor estimado de forma rapida."
         path="/calculadora-vacaciones-ecuador"
         structuredData={structuredData}
       />

@@ -65,8 +65,8 @@ function CalculadoraFiniquito() {
   return (
     <>
       <SeoHead
-        title="Calculadora de Finiquito Ecuador Gratis"
-        description="Calcula un finiquito basico en Ecuador con una herramienta gratis y facil de usar."
+        title="Calculadora de Finiquito Ecuador Gratis y Rapida"
+        description="Calcula un finiquito basico en Ecuador gratis. Estima decimo tercero, vacaciones y total con una herramienta facil de usar."
         path="/calculadora-finiquito-ecuador"
         structuredData={structuredData}
       />

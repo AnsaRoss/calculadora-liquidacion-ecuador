@@ -65,8 +65,8 @@ function CalculadoraDecimoTercero() {
   return (
     <>
       <SeoHead
-        title="Calculadora de Decimo Tercero Ecuador Gratis"
-        description="Calcula el decimo tercero proporcional en Ecuador con una herramienta gratis y facil de usar."
+        title="Calculadora de Decimo Tercero Ecuador Gratis y Rapida"
+        description="Calcula tu decimo tercero proporcional en Ecuador gratis. Ingresa sueldo y fechas para obtener un valor estimado en segundos."
         path="/calculadora-decimo-tercero-ecuador"
         structuredData={structuredData}
       />
