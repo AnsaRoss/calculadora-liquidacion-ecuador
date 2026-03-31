@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import CalculatorForm from '../components/CalculatorForm';
 import ResultsCard from '../components/ResultsCard';
 import SeoHead from '../components/SeoHead';
+import SiteFooter from '../components/SiteFooter';
 import { calculateSettlement } from '../utils/calculations';
 
 const initialForm = {
@@ -86,6 +87,8 @@ function Home() {
               <Link to="/como-calcular-liquidacion-ecuador">Como calcular paso a paso</Link>
               <Link to="/decimo-tercero-ecuador">Decimo tercero en Ecuador</Link>
               <Link to="/vacaciones-ecuador">Vacaciones en Ecuador</Link>
+              <Link to="/finiquito-ecuador">Finiquito en Ecuador</Link>
+              <Link to="/despido-intempestivo-ecuador">Despido intempestivo</Link>
             </nav>
 
             <div className="hero-highlights">
@@ -134,9 +137,14 @@ function Home() {
               <Link to="/como-calcular-liquidacion-ecuador">Leer guia completa</Link>
               <Link to="/decimo-tercero-ecuador">Aprender sobre decimo tercero</Link>
               <Link to="/vacaciones-ecuador">Aprender sobre vacaciones</Link>
+              <Link to="/finiquito-ecuador">Entender el finiquito</Link>
+              <Link to="/renuncia-voluntaria-ecuador">Renuncia voluntaria</Link>
+              <Link to="/acta-de-finiquito-ecuador">Acta de finiquito</Link>
             </div>
           </div>
         </section>
+
+        <SiteFooter />
       </main>
     </>
   );
