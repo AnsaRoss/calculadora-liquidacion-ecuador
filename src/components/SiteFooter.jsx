@@ -14,6 +14,7 @@ function SiteFooter() {
 
         <nav aria-label="Enlaces principales">
           <h3>Guias</h3>
+          <Link to="/calculadora-decimo-tercero-ecuador">Calculadora de decimo tercero</Link>
           <Link to="/como-calcular-liquidacion-ecuador">Como calcular liquidacion</Link>
           <Link to="/decimo-tercero-ecuador">Decimo tercero</Link>
           <Link to="/vacaciones-ecuador">Vacaciones</Link>

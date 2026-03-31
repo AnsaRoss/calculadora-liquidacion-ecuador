@@ -11,12 +11,14 @@ import JubilacionPatronal from './pages/JubilacionPatronal';
 import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
 import TerminosCondiciones from './pages/TerminosCondiciones';
 import Contacto from './pages/Contacto';
+import CalculadoraDecimoTercero from './pages/CalculadoraDecimoTercero';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/calculadora-decimo-tercero-ecuador" element={<CalculadoraDecimoTercero />} />
         <Route path="/como-calcular-liquidacion-ecuador" element={<ComoCalcular />} />
         <Route path="/decimo-tercero-ecuador" element={<DecimoTercero />} />
         <Route path="/vacaciones-ecuador" element={<Vacaciones />} />

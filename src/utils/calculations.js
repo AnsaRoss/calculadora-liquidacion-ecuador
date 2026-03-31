@@ -5,7 +5,7 @@ function parseDate(value) {
   return Number.isNaN(date.getTime()) ? null : date;
 }
 
-export function calculateSettlement({ salary, startDate, endDate }) {
+function validateBaseFields({ salary, startDate, endDate }) {
   const errors = {};
 
   if (!salary) {
@@ -45,11 +45,20 @@ export function calculateSettlement({ salary, startDate, endDate }) {
     };
   }
 
-  const diffInDays = (end.getTime() - start.getTime()) / MS_PER_DAY;
+  return { start, end, salary: Number(salary) };
+}
+
+export function calculateSettlement({ salary, startDate, endDate }) {
+  const validation = validateBaseFields({ salary, startDate, endDate });
+
+  if (validation.errors) {
+    return { errors: validation.errors };
+  }
+
+  const diffInDays = (validation.end.getTime() - validation.start.getTime()) / MS_PER_DAY;
   const months = diffInDays / 30;
-  const numericSalary = Number(salary);
-  const decimo = (numericSalary / 12) * months;
-  const vacations = (numericSalary / 24) * months;
+  const decimo = (validation.salary / 12) * months;
+  const vacations = (validation.salary / 24) * months;
   const total = decimo + vacations;
 
   return {
@@ -57,5 +66,22 @@ export function calculateSettlement({ salary, startDate, endDate }) {
     decimo,
     vacations,
     total,
+  };
+}
+
+export function calculateDecimoTercero({ salary, startDate, endDate }) {
+  const validation = validateBaseFields({ salary, startDate, endDate });
+
+  if (validation.errors) {
+    return { errors: validation.errors };
+  }
+
+  const diffInDays = (validation.end.getTime() - validation.start.getTime()) / MS_PER_DAY;
+  const months = diffInDays / 30;
+  const decimo = (validation.salary / 12) * months;
+
+  return {
+    months,
+    decimo,
   };
 }
